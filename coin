@@ -8,43 +8,61 @@ p = float(raw_input("Weight in Pennies: "))
 
 def number_of_quarters(q):
   numq = math.floor(q / 5.67)
-  wrapq = math.ceil(numq / 40)
-  print "You have %d quarters." % (numq)
-  print "You need %d quarter wraps." % (wrapq)
   return numq
+print "You have %d quarters." % number_of_quarters(q)
+
+def wrap_quarters(q):
+  numq = math.floor(q / 5.67)
+  wrapq = math.ceil(numq / 40)
+  return wrapq
+print "You will need %d quarter wraps." % wrap_quarters(q)
   
 def number_of_dimes(d):
   numd = math.floor(d / 2.268)
-  wrapd = math.ceil(numd / 50)
-  print "You have %d dimes!" % (numd) 
-  print "You need %d dime wraps." % (wrapd)
   return numd
+print "You have %d dimes." % number_of_dimes(d)
+
+def wrap_dimes(d):
+  numd = math.floor(d / 2.268)
+  wrapd = math.ceil(numd / 50)
+  return wrapd
+print "You will need %d dime wraps." % wrap_dimes(d)
+
   
 def number_of_nickels(n):
   numn = math.floor(n / 5)
-  wrapn = math.ceil(numn / 40)
-  print "You have %d nickels!" % (numn)
-  print "You need %d nickel wraps." % (wrapn)
   return numn
+print "You have %d nickels." % number_of_nickels(n)
+
+def wrap_nickels(n):
+  numn = math.floor(n / 5)
+  wrapn = math.ceil(numn / 40)
+  return wrapn
+print "You will need %d nickel wraps." % wrap_nickels(n)
 
 def number_of_pennies(p):
   nump = math.floor(p / 2.5)
-  wrapp = math.ceil(nump / 50)
-  print "You have %d pennies!" % (nump)
-  print "You need %d penny wraps." % (wrapp)
   return nump
+print "You have %d pennies." % number_of_pennies(p)
+
+def wrap_pennies(p):
+  nump = math.floor(p / 2.5)
+  wrapp = math.ceil(nump / 50)
+  return wrapp
+print "You will need %d penny wraps." % wrap_pennies(p)
+
 
 def number_of_coins(q,d,n,p):
   total_coins = number_of_quarters(q) + number_of_dimes(d) + number_of_nickels(n) + number_of_pennies(p)
-  print "you have a total of %d coins." % (total_coins)
+  return total_coins
+print "you have a total of %d coins." % number_of_coins(q,d,n,p)
 
 def total_money_value(q,d,n,p):
   total = round(number_of_quarters(q) * .25, 2) + round(number_of_dimes(d) * .10, 2) + round(number_of_nickels(n) *.05, 2) + round(number_of_pennies(p) *.01, 2)
-  print "You have a total of ", total
+  return total
+print "You have a total of $%d" % total_money_value(q,d,n,p)
 
 number_of_quarters(q)
 number_of_dimes(d)
 number_of_nickels(n)
 number_of_pennies(p)
-number_of_coins(q,d,n,p)
-total_money_value(q,d,n,p)
