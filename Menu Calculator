@@ -1,0 +1,40 @@
+import math
+import collections
+
+menu = collections.OrderedDict()
+menu["1. Chicken Strips"] = "3.50"
+menu["2. French Fries"] = "2.50"
+menu["3. Hamburger"] = "4.00"
+menu["4. Hot Dog"] = "3.50"
+menu["5. Salad"] = "3.75"
+menu["6. Large Drink"] = "1.75"
+menu["7. Medium Drink"] = "1.50"
+menu["8. Small Drink"] = "1.25"
+menu["9. Milk Shake"] = "2.25"
+
+print "Welcome to Gustavo's! Here is the menu:"
+for item in menu:
+  print item, menu[item]
+
+def customer_order(order):
+  order = str(raw_input("Please type in your order as a number:"))
+  order = str(order.lower())
+  length = len(order)
+  while length > 0:
+    for digit in order:
+      total = 0
+      if digit == "1":
+        total += 3.50
+        return total
+        length -= 1
+      elif digit =="2":
+        total += 2.50
+        return total
+      	length -= 1 
+
+       
+print customer_order(order)      
+
+    
+
+
