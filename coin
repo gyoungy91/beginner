@@ -1,0 +1,49 @@
+import math
+
+q = float(raw_input("Weight in Quarters: "))
+d = float(raw_input("Weight in Dimes: "))
+n = float(raw_input("Weight in Nickels: "))
+p = float(raw_input("Weight in Pennies: "))
+
+def number_of_quarters(q):
+  numq = math.floor(q / 5.67)
+  wrapq = math.ceil(numq / 40)
+  print "You have %d quarters." % (numq)
+  print "You need %d quarter wraps." % (wrapq)
+  return numq
+  
+def number_of_dimes(d):
+  numd = math.floor(d / 2.268)
+  wrapd = math.ceil(numd / 50)
+  print "You have %d dimes!" % (numd) 
+  print "You need %d dime wraps." % (wrapd)
+  return numd
+  
+def number_of_nickels(n):
+  numn = math.floor(n / 5)
+  wrapn = math.ceil(numn / 40)
+  print "You have %d nickels!" % (numn)
+  print "You need %d nickel wraps." % (wrapn)
+  return numn
+
+def number_of_pennies(p)
+  nump = math.floor(p / 2.5)
+  wrapp = math.ceil(nump / 50)
+  print "You have %d pennies!" % (nump)
+  print "You need %d penny wraps." (wrapp)
+  return nump
+
+##### this code is off! Ignore for now
+def number_of_coins(c): 
+  c = sum(numq, numd, numn, nump)
+  print "You have a total of %d coins." % (c)
+
+def total_money_value(q,d,n,p):
+  total = round(number_of_quarters * .25, 2) + round(number_of_dimes * .10, 2) + round(number_of_nickels *.05, 2) + round(number_of_pennies *.01, 2)
+  print "You have a total of ", total
+  
+number_of_quarters(q)
+number_of_dimes(d)
+number_of_nickels(n)
+number_of_pennies(p)
+total_money_value(q,d,n,p)
